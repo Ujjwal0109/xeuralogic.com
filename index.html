@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xeuralogic Labs</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="64b4dd1cd41e57d6b847c153fb228fcf.png" alt="Logo" class="logo">
+            <div>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#brain">Brain</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#community">Community</a>
+            </div>
+            <a href="#contact" class="button">Contact Us</a>
+        </nav>
+    </header>
+
+    <section id="home" class="main-content">
+        <h1>Your vision, our expertise</h1>
+        <p>We believe that AI should be accessible to everyone, regardless of their level of expertise or industry. That's why we're dedicated to providing solutions alike.</p>
+        <a href="#contact" class="button contact-btn">Contact Us</a>
+        <img src="Screenshot_2024-08-15_152606-removebg-preview.png" alt="Brain Image" class="brain-image">
+    </section>
+
+    <section id="services" class="tech-section">
+        <h5>TECH WE LOVE</h5>
+        <p>We’re all about the tech that makes magic happen. They’re not just part of our workflow—they’re part of who we are. At the core, it’s about using the latest and greatest to create something that truly stands out, both for us and our clients.</p>
+    </section>
+
+    <section id="brain" class="what-we-do-section">
+        <h5>WHAT WE DO</h5>
+        <p>From producing media to full stack development of all kinds - AI, SAAS, Web Apps, Websites, <span class="colored-text">we do it all.</span></p>
+        <div class="image-container">
+            <img src="file-DFQ82KSTuq6werugcxwyV00s" alt="Placeholder 1">
+            <img src="file-DFQ82KSTuq6werugcxwyV00s" alt="Placeholder 2">
+            <img src="file-DFQ82KSTuq6werugcxwyV00s" alt="Placeholder 3">
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonial-section">
+        <h3>Testimonials</h3>
+        <div class="testimonial-slider">
+            <div class="slides">
+                <div class="testimonial-slide">
+                    <p>"Xeuralogic Labs transformed our approach to AI. Their innovative solutions are game-changers."</p>
+                    <p class="author">Alex Johnson, CEO of Tech Innovations</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"Exceptional service and outstanding results. Highly recommend Xeuralogic Labs for any tech needs."</p>
+                    <p class="author">Maria Lopez, CTO of FutureTech</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"A fantastic team with a keen eye for detail. Their expertise is evident in every project."</p>
+                    <p class="author">Michael Brown, Lead Developer at Creative Solutions</p>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="community-section">
+        <div class="community-container">
+            <h2>Join our community!</h2>
+            <p>Engage with like-minded people. Whether you’re here to connect, collaborate, or just stay in the loop with the latest in tech and creativity, there’s a place for you.</p>
+            <a href="#join" class="join-button">Join Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Xeuralogic Labs</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const footer = document.querySelector('footer');
+            const scrollY = window.scrollY;
+            const docHeight = document.body.scrollHeight;
+            const windowHeight = window.innerHeight;
+
+            // Calculate the percentage of the page that has been scrolled
+            const scrollPercentage = (scrollY / (docHeight - windowHeight)) * 100;
+
+            // Set the footer opacity based on the scroll percentage
+            footer.style.opacity = scrollPercentage / 100;
+        });
+
+        // Testimonial Slider functionality
+        const slides = document.querySelector('.slides');
+        const slideCount = document.querySelectorAll('.testimonial-slide').length;
+        let currentIndex = 0;
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slideCount - 1;
+            updateSlider();
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            currentIndex = (currentIndex < slideCount - 1) ? currentIndex + 1 : 0;
+            updateSlider();
+        });
+
+        function updateSlider() {
+            const offset = -100 * currentIndex;
+            slides.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
